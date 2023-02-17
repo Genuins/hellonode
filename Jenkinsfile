@@ -4,10 +4,7 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout scm
-        def a = load('a.groovy')
-        echo("${env.BUILD_NUMBER}")
-        echo("${a.LOADED_BUILD_NUMBER}")
+       
     }
 
     stage('Build image') {
