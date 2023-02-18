@@ -16,12 +16,6 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
       
-          sshagent(credentials : ['use-the-id-from-credential-generated-by-jenkins']) {
-                sh 'ssh -o StrictHostKeyChecking=no dockeradmin@192.168.33.250 uptime'
-                sh 'ssh -v dockeradmin@192.168.33.250'
-                sh 'scp ./source/filename user@hostname.com:/remotehost/target'
-          }
-      
         app = docker.build("getintodevops/hellonode")
         
     }
